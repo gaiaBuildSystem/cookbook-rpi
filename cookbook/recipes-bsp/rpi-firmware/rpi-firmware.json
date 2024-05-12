@@ -1,0 +1,19 @@
+{
+    "name": "rpi-firmware",
+    "type": "bootloader",
+    "priority": 0,
+    "support": [
+        "linux/arm64"
+    ],
+    "source": "https://github.com/raspberrypi/firmware/releases/download/",
+    "file": "raspi-firmware_1.20240424.orig.tar.xz",
+    "ref": {
+        "linux/arm64": "1.20240424"
+    },
+    "fetchRecipes": [
+        "fetch.ts"
+    ],
+    "deployRecipes": [
+        "deploy.ts"
+    ]
+}

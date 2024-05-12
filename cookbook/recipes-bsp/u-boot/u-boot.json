@@ -1,0 +1,12 @@
+{
+    "name": "u-boot",
+    "type": "bootloader",
+    "support": [
+        "linux/arm64"
+    ],
+    "afterDeployRecipes": [
+        "dtb.ts"
+    ],
+    "priority": 1,
+    "merge": true
+}
