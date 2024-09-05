@@ -30,7 +30,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
 // apply the splash.c
 execSync(
-    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `echo ${USER_PASSWD} | sudo -k -E -S ` +
     `cp -f ${_path}/${MACHINE}/splash.c ${BUILD_PATH}/tmp/${MACHINE}/u-boot/common/splash.c`,
     {
         shell: "/bin/bash",

@@ -30,7 +30,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
 // decompress the tarball to the boot partition
 execSync(
-    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `echo ${USER_PASSWD} | sudo -k -E -S ` +
     `cp -f ${_path}/splash.bmp ${IMAGE_MNT_BOOT}/`,
     {
         shell: "/bin/bash",

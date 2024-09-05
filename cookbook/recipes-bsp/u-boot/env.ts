@@ -30,7 +30,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
 // apply the rpi.env
 execSync(
-    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `echo ${USER_PASSWD} | sudo -k -E -S ` +
     `cp -f ${_path}/${MACHINE}/rpi.env ${BUILD_PATH}/tmp/${MACHINE}/u-boot/board/raspberrypi/rpi/rpi.env`,
     {
         shell: "/bin/bash",

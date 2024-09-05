@@ -32,7 +32,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
 // decompress the tarball to the boot partition
 execSync(
-    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `echo ${USER_PASSWD} | sudo -k -E -S ` +
     `tar -xv --strip-components=1 -f ${filePath} -C ${untarPath}`,
     {
         shell: "/bin/bash",
@@ -43,7 +43,7 @@ execSync(
 
 // copy the boot/ files to the boot partition
 execSync(
-    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `echo ${USER_PASSWD} | sudo -k -E -S ` +
     `cp -r ${untarPath}/boot/* ${IMAGE_MNT_BOOT}/`,
     {
         shell: "/bin/bash",
@@ -54,7 +54,7 @@ execSync(
 
 // overwrite the config.txt
 execSync(
-    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `echo ${USER_PASSWD} | sudo -k -E -S ` +
     `cp -f ${_path}/${MACHINE}/config.txt ${IMAGE_MNT_BOOT}/config.txt`,
     {
         shell: "/bin/bash",
