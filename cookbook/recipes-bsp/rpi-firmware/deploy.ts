@@ -23,6 +23,7 @@ const meta = JSON.parse(process.env.META as string)
 // get the actual script path, not the process.cwd
 const _path = PATH.dirname(process.argv[1])
 const filePath = `${BUILD_PATH}/tmp/${MACHINE}/rpi-firmware/${meta.name}-${MACHINE}.tar.xz`
+const untarPath = `${BUILD_PATH}/tmp/${MACHINE}/rpi-firmware/`
 
 const IMAGE_MNT_BOOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/boot`
 const IMAGE_MNT_ROOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/root`
@@ -32,7 +33,18 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 // decompress the tarball to the boot partition
 execSync(
     `echo ${USER_PASSWD} | sudo -E -S ` +
-    `tar -xv -f ${filePath} -C ${IMAGE_MNT_BOOT}/`,
+    `tar -xv --strip-components=1 -f ${filePath} -C ${untarPath}`,
+    {
+        shell: "/bin/bash",
+        stdio: "inherit",
+        encoding: "utf-8",
+        env: process.env
+    })
+
+// copy the boot/ files to the boot partition
+execSync(
+    `echo ${USER_PASSWD} | sudo -E -S ` +
+    `cp -r ${untarPath}/boot/* ${IMAGE_MNT_BOOT}/`,
     {
         shell: "/bin/bash",
         stdio: "inherit",

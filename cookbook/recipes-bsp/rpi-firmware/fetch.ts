@@ -36,7 +36,7 @@ if (FS.existsSync(filePath)) {
         FS.mkdirSync(`${BUILD_PATH}/tmp/${MACHINE}/rpi-firmware`, { recursive: true })
     }
 
-    // download the distro tar.gz
+    // download the firmware tar.gz
     logger.info(`downloading ${distroURL} ...`)
 
     const res = await fetch(distroURL)
