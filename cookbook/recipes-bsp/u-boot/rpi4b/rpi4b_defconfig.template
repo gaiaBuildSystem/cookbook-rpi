@@ -76,7 +76,7 @@ CONFIG_SPLASH_SCREEN=y
 CONFIG_SPLASH_SOURCE=y
 CONFIG_SPLASH_SCREEN_ALIGN=y
 
-# if need to debug
+# enable these for log debugging
 # CONFIG_LOG=y
 # CONFIG_LOG_CONSOLE=y
 # CONFIG_LOG_MAX_LEVEL=9
