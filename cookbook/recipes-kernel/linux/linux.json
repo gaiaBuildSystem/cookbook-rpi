@@ -1,0 +1,13 @@
+{
+    "name": "linux",
+    "type": "kernel",
+    "priority": 1,
+    "source": "https://github.com/raspberrypi/linux",
+    "support": [
+        "linux/arm64"
+    ],
+    "ref": {
+        "linux/arm64": "c1432b4bae5b6582f4d32ba381459f33c34d1424"
+    },
+    "merge": true
+}
