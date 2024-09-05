@@ -4,8 +4,13 @@
     "support": [
         "linux/arm64"
     ],
+    "patchRecipes": [
+        "env.ts",
+        "locations.ts"
+    ],
     "afterDeployRecipes": [
-        "dtb.ts"
+        "dtb.ts",
+        "splash.ts"
     ],
     "priority": 1,
     "merge": true
