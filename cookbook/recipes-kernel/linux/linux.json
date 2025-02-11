@@ -9,5 +9,8 @@
     "ref": {
         "linux/arm64": "c1432b4bae5b6582f4d32ba381459f33c34d1424"
     },
+    "afterDeployRecipes": [
+        "dtb.ts"
+    ],
     "merge": true
 }

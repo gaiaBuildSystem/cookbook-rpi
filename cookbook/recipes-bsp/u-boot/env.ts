@@ -28,14 +28,18 @@ const IMAGE_MNT_ROOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/root`
 process.env.IMAGE_MNT_BOOT = IMAGE_MNT_BOOT
 process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
-// apply the rpi.env
-execSync(
-    `echo ${USER_PASSWD} | sudo -k -E -S ` +
-    `cp -f ${_path}/${MACHINE}/rpi.env ${BUILD_PATH}/tmp/${MACHINE}/u-boot/board/raspberrypi/rpi/rpi.env`,
-    {
-        shell: "/bin/bash",
-        stdio: "inherit",
-        encoding: "utf-8",
-        env: process.env
-    })
-logger.success("ok, u-boot rpi.env patched")
+if (MACHINE === "rpi4b") {
+    // apply the rpi.env
+    execSync(
+        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `cp -f ${_path}/${MACHINE}/rpi.env ${BUILD_PATH}/tmp/${MACHINE}/u-boot/board/raspberrypi/rpi/rpi.env`,
+        {
+            shell: "/bin/bash",
+            stdio: "inherit",
+            encoding: "utf-8",
+            env: process.env
+        })
+    logger.success("ok, u-boot rpi.env patched")
+} else {
+    logger.warn(`no patch for ${MACHINE}`)
+}

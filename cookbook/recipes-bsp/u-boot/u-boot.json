@@ -4,6 +4,10 @@
     "support": [
         "linux/arm64"
     ],
+    "source": "https://github.com/gaiaBuildSystem/u-boot",
+    "ref": {
+        "linux/arm64": "484afc494e54aadb4756775e338f65ab1fa07022"
+    },
     "patchRecipes": [
         "env.ts",
         "locations.ts"

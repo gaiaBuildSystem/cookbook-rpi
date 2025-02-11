@@ -8,6 +8,7 @@ hdmi_mode:0=82
 # Not yet implemented for RPi4B
 hdmi_blanking:0=1
 disable_overscan=1
+disable_splash=1
 
 # TODO we need a way to make this configurable
 framebuffer_width=1024

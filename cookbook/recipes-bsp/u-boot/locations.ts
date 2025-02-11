@@ -28,9 +28,10 @@ const IMAGE_MNT_ROOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/root`
 process.env.IMAGE_MNT_BOOT = IMAGE_MNT_BOOT
 process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
-// apply the splash.c
-execSync(
-    `echo ${USER_PASSWD} | sudo -k -E -S ` +
+if (MACHINE === "rpi4b") {
+    // apply the splash.c
+    execSync(
+    `echo ${USER_PASSWD} | sudo -k -S ` +
     `cp -f ${_path}/${MACHINE}/splash.c ${BUILD_PATH}/tmp/${MACHINE}/u-boot/common/splash.c`,
     {
         shell: "/bin/bash",
@@ -38,4 +39,7 @@ execSync(
         encoding: "utf-8",
         env: process.env
     })
-logger.success("ok, u-boot common/splash.c patched")
+    logger.success("ok, u-boot common/splash.c patched")
+} else {
+    logger.warn(`no patch for ${MACHINE}`)
+}

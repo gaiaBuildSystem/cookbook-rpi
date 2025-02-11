@@ -1,5 +1,5 @@
 {
-    "name": "Quecto-Reference",
+    "name": "DeimOS-Reference",
     "machine": "rpi4b",
     "arch": "linux/arm64",
     "version": {
@@ -17,6 +17,7 @@
     "excludeRecipes": [
         "grub",
         "microsoft",
+        "powershell",
         "docker",
         "initramfs-php",
         "neofetch"

@@ -6,7 +6,7 @@ import logger from "node-color-log"
 import { execSync } from "child_process"
 
 // run update in the chroot
-logger.info("deploy u-boot device tree ...")
+logger.info("deploy Linux kernel device tree ...")
 
 const ARCH = process.env.ARCH as string
 const MACHINE = process.env.MACHINE as string
@@ -28,18 +28,38 @@ const IMAGE_MNT_ROOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/root`
 process.env.IMAGE_MNT_BOOT = IMAGE_MNT_BOOT
 process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
-// decompress the tarball to the boot partition
-if (MACHINE === "rpi4b") {
+if (MACHINE === "rpi5b") {
     execSync(
         `echo ${USER_PASSWD} | sudo -k -S ` +
-        `cp -f ${BUILD_PATH}/tmp/${MACHINE}/u-boot/arch/arm/dts/bcm2711-rpi-4-b.dtb ${IMAGE_MNT_BOOT}/`,
+        `cp -f ${BUILD_PATH}/tmp/${MACHINE}/linux/arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dtb ${IMAGE_MNT_BOOT}/`,
         {
             shell: "/bin/bash",
             stdio: "inherit",
             encoding: "utf-8",
             env: process.env
         })
-    logger.success("ok, deploy device tree for u-boot ok")
+    logger.success("ok, deploy device tree for kernel ok")
+
+    execSync(
+        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `mkdir -p ${IMAGE_MNT_BOOT}/overlays`,
+        {
+            shell: "/bin/bash",
+            stdio: "inherit",
+            encoding: "utf-8",
+            env: process.env
+        })
+
+    execSync(
+        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `cp ${BUILD_PATH}/tmp/${MACHINE}/linux/arch/arm64/boot/dts/overlays/*.dtbo ${IMAGE_MNT_BOOT}/overlays/`,
+        {
+            shell: "/bin/bash",
+            stdio: "inherit",
+            encoding: "utf-8",
+            env: process.env
+        })
+    logger.success("ok, deploy device tree overlaysfor kernel ok")
 } else {
-    logger.warn(`no device tree for u-boot for ${MACHINE}`);
+    logger.warn(`no device tree for linux kernel for ${MACHINE}`)
 }

@@ -20,11 +20,12 @@
  *
  */
 
-#include <common.h>
 #include <display_options.h>
 #include <env.h>
 #include <splash.h>
 #include <video.h>
+#include <vsprintf.h>
+#include <linux/kernel.h>
 
 static struct splash_location default_splash_locations[] = {
 	{
@@ -168,9 +169,6 @@ int splash_display(void)
 	ulong addr;
 	char *s;
 	int x = 0, y = 0, ret;
-
-	printf("meu pau 23cm\n");
-
 	if (!CONFIG_IS_ENABLED(SPLASH_SCREEN))
 		return -ENOSYS;
 	s = env_get("splashimage");
