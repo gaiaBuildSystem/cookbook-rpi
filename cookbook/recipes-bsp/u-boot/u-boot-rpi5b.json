@@ -1,0 +1,21 @@
+{
+    "name": "u-boot",
+    "type": "bootloader",
+    "support": [
+        "linux/arm64"
+    ],
+    "source": "https://github.com/gaiaBuildSystem/u-boot",
+    "ref": {
+        "linux/arm64": "3da1864b1f2fc3cf2b4eaa1849bcafa669ff674c"
+    },
+    "patchRecipes": [
+        "env.ts",
+        "locations.ts"
+    ],
+    "afterDeployRecipes": [
+        "dtb.ts",
+        "splash.ts"
+    ],
+    "priority": 1,
+    "merge": true
+}
