@@ -28,7 +28,7 @@ const IMAGE_MNT_ROOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/root`
 process.env.IMAGE_MNT_BOOT = IMAGE_MNT_BOOT
 process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
-if (MACHINE === "rpi4b") {
+if (MACHINE === "rpi4b" || MACHINE === "rpi5b") {
     // apply the rpi.env
     execSync(
         `echo ${USER_PASSWD} | sudo -k -S ` +
