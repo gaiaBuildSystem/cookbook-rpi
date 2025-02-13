@@ -12,6 +12,9 @@
         "env.ts",
         "locations.ts"
     ],
+    "deployRecipes": [
+        "fw.ts"
+    ],
     "afterDeployRecipes": [
         "dtb.ts",
         "splash.ts"

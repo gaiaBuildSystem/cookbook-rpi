@@ -20,6 +20,8 @@ env set bootargs ${bootargs} 8250.nr_uarts=1
 env set bootargs ${bootargs} ignore_loglevel earlycon
 env set bootargs ${bootargs} ${extraargs}
 
+saveenv
+
 # loads the kernel and the initramfs
 mmc dev 0
 fatload mmc 0:1 ${kernel_addr_r} Image
