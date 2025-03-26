@@ -31,7 +31,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 if (MACHINE === "rpi4b" || MACHINE === "rpi5b") {
     // apply the rpi.env
     execSync(
-        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `sudo -k ` +
         `cp -f ${_path}/${MACHINE}/rpi.env ${BUILD_PATH}/tmp/${MACHINE}/u-boot/board/raspberrypi/rpi/rpi.env`,
         {
             shell: "/bin/bash",

@@ -31,7 +31,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 if (MACHINE === "rpi4b" || MACHINE === "rpi5b") {
     // apply the splash.c
     execSync(
-    `echo ${USER_PASSWD} | sudo -k -S ` +
+    `sudo -k ` +
     `cp -f ${_path}/${MACHINE}/splash.c ${BUILD_PATH}/tmp/${MACHINE}/u-boot/common/splash.c`,
     {
         shell: "/bin/bash",

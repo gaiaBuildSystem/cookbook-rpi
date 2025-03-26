@@ -30,7 +30,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
 if (MACHINE === "rpi5b") {
     execSync(
-        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `sudo -k ` +
         `cp -f ${BUILD_PATH}/tmp/${MACHINE}/linux/arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dtb ${IMAGE_MNT_BOOT}/`,
         {
             shell: "/bin/bash",
@@ -41,7 +41,7 @@ if (MACHINE === "rpi5b") {
     logger.success("ok, deploy device tree for kernel ok")
 
     execSync(
-        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `sudo -k ` +
         `mkdir -p ${IMAGE_MNT_BOOT}/overlays`,
         {
             shell: "/bin/bash",
@@ -51,7 +51,7 @@ if (MACHINE === "rpi5b") {
         })
 
     execSync(
-        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `sudo -k ` +
         `cp ${BUILD_PATH}/tmp/${MACHINE}/linux/arch/arm64/boot/dts/overlays/*.dtbo ${IMAGE_MNT_BOOT}/overlays/`,
         {
             shell: "/bin/bash",

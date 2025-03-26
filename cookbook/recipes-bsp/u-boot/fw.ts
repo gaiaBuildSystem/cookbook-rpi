@@ -31,7 +31,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
 // apply the /etc/fw_env.config
 execSync(
-    `echo ${USER_PASSWD} | sudo -k -S ` +
+    `sudo -k ` +
     `cp -f ${_path}/fw_env.config ${IMAGE_MNT_ROOT}/etc/fw_env.config`,
     {
         shell: "/bin/bash",

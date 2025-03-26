@@ -31,7 +31,7 @@ process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 // decompress the tarball to the boot partition
 if (MACHINE === "rpi4b") {
     execSync(
-        `echo ${USER_PASSWD} | sudo -k -S ` +
+        `sudo -k ` +
         `cp -f ${BUILD_PATH}/tmp/${MACHINE}/u-boot/arch/arm/dts/bcm2711-rpi-4-b.dtb ${IMAGE_MNT_BOOT}/`,
         {
             shell: "/bin/bash",
