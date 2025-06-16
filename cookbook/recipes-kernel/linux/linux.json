@@ -2,12 +2,12 @@
     "name": "linux",
     "type": "kernel",
     "priority": 1,
-    "source": "https://github.com/raspberrypi/linux",
+    "source": "https://github.com/gaiaBuildSystem/linux",
     "support": [
         "linux/arm64"
     ],
     "ref": {
-        "linux/arm64": "456a1f0c9dc98f4bd58daa392c8a5db5cd5c0f01"
+        "linux/arm64": "84a74b21a41a62e16295f8a5e8027caf5d10ff55"
     },
     "afterDeployRecipes": [
         "dtb.ts"
