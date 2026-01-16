@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+/root/.bun/bin/bun install
