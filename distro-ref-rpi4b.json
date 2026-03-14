@@ -22,5 +22,6 @@
         "docker",
         "initramfs-php",
         "neofetch"
-    ]
+    ],
+    "$schema": "./schema/distro.json"
 }
