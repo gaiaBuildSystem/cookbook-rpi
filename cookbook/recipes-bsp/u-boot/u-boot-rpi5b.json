@@ -13,8 +13,7 @@
         "locations.ts"
     ],
     "afterDeployRecipes": [
-        "dtb.ts",
-        "splash.ts"
+        "dtb.ts"
     ],
     "priority": 1,
     "merge": true
