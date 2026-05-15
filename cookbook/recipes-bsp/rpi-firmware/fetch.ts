@@ -1,7 +1,7 @@
-#!/opt/bun/bin/bun
+#!/usr/bin/env -S deno run --allow-all
 
-import * as FS from "fs"
-import * as CRYPTO from "crypto"
+import * as FS from "node:fs"
+import * as CRYPTO from "node:crypto"
 
 import logger from "node-color-log"
 import fetch from "node-fetch"
