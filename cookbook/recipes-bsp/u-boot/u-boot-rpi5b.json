@@ -12,9 +12,6 @@
         "env.ts",
         "locations.ts"
     ],
-    "afterDeployRecipes": [
-        "dtb.ts"
-    ],
     "priority": 1,
     "merge": true
 }
