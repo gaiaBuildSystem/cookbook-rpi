@@ -7,7 +7,7 @@
         "linux/arm64"
     ],
     "ref": {
-        "linux/arm64": "b67dbbe695c27f64121877b1e1114b6a9baf0478"
+        "linux/arm64": "930837d831a0c65904832abe55001e15ad82f20a"
     },
     "afterDeployRecipes": [
         "dtb.ts"

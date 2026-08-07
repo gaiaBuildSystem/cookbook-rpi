@@ -12,7 +12,8 @@
             "type": "string",
             "enum": [
                 "rpi4b",
-                "rpi5b"
+                "rpi5b",
+                "cm5"
             ]
         }
     }
