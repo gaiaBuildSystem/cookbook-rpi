@@ -14,6 +14,7 @@ This cookbook provides a collection of recipes to help you get started with Deim
 | Board                      | Gaia Machine Name   |
 |----------------------------|---------------------|
 | Raspberry Pi 5B            | rpi5b               |
+| Compute Module 5           | cm5                 |
 | Raspberry Pi 4B            | rpi4b               |
 
 ## Prerequisites
