@@ -30,6 +30,30 @@
                 }
             ]
         },
+        "cm4": {
+            "feeds": [
+                {
+                    "name": "backports",
+                    "feedUrl": "deb.debian.org/debian",
+                    "feedUri": "http://deb.debian.org/debian",
+                    "suites": "bookworm-backports",
+                    "components": "main",
+                    "gpgKeyUrl": "https://ftp-master.debian.org/keys/archive-key-12.asc",
+                    "pin": "release n=bookworm-backports",
+                    "pinPriority": 700
+                },
+                {
+                    "name": "raspberrypi",
+                    "feedUrl": "archive.raspberrypi.com",
+                    "feedUri": "http://archive.raspberrypi.com/debian",
+                    "suites": "bookworm",
+                    "components": "main",
+                    "gpgKeyUrl": "https://archive.raspberrypi.com/debian/raspberrypi.gpg.key",
+                    "pin": "origin archive.raspberrypi.com",
+                    "pinPriority": 900
+                }
+            ]
+        },
         "rpi5b": {
             "feeds": [
                 {

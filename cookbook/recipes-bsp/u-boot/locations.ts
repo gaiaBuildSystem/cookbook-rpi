@@ -21,7 +21,7 @@ const IMAGE_MNT_ROOT = `${BUILD_PATH}/tmp/${MACHINE}/mnt/root`
 process.env.IMAGE_MNT_BOOT = IMAGE_MNT_BOOT
 process.env.IMAGE_MNT_ROOT = IMAGE_MNT_ROOT
 
-if (MACHINE === "rpi4b" || MACHINE === "rpi5b" || MACHINE === "cm5") {
+if (MACHINE === "rpi4b" || MACHINE === "rpi5b" || MACHINE === "cm5" || MACHINE === "cm4") {
     // apply the splash.c
     execSync(
     `sudo -k ` +

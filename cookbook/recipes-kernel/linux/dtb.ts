@@ -117,6 +117,39 @@ if (MACHINE === "rpi5b") {
         })
     logger.success("ok, deploy device tree overlaysfor kernel ok")
 
+} else if (MACHINE === "cm4") {
+    execSync(
+        `sudo -k ` +
+        `cp -f ${BUILD_PATH}/tmp/${MACHINE}/linux/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-io.dtb ${IMAGE_MNT_BOOT}/`,
+        {
+            shell: "/bin/bash",
+            stdio: "inherit",
+            encoding: "utf-8",
+            env: process.env
+        })
+    logger.success("ok, deploy device tree for kernel ok")
+
+    execSync(
+        `sudo -k ` +
+        `mkdir -p ${IMAGE_MNT_BOOT}/overlays`,
+        {
+            shell: "/bin/bash",
+            stdio: "inherit",
+            encoding: "utf-8",
+            env: process.env
+        })
+
+    execSync(
+        `sudo -k ` +
+        `cp ${BUILD_PATH}/tmp/${MACHINE}/linux/arch/arm64/boot/dts/overlays/*.dtbo ${IMAGE_MNT_BOOT}/overlays/`,
+        {
+            shell: "/bin/bash",
+            stdio: "inherit",
+            encoding: "utf-8",
+            env: process.env
+        })
+    logger.success("ok, deploy device tree overlaysfor kernel ok")
+
 } else {
     logger.warn(`no device tree for linux kernel for ${MACHINE}`)
 }
