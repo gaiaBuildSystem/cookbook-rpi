@@ -16,6 +16,7 @@ This cookbook provides a collection of recipes to help you get started with Deim
 | Raspberry Pi 5B            | rpi5b               |
 | Compute Module 5           | cm5                 |
 | Raspberry Pi 4B            | rpi4b               |
+| Compute Module 4           | cm4                 |
 
 ## Prerequisites
 
@@ -24,7 +25,7 @@ This cookbook provides a collection of recipes to help you get started with Deim
 ## Build an Image
 
 ```bash
-./gaia/scripts/bitcook/gaia.ts --buildPath /home/user/workdir --distro ./cookbook-rpi/distro-ref-rpi4b.json
+./gaia/bitcook --buildPath /home/user/workdir --distro ./cookbook-rpi/distro-ref-rpi4b.json --noCache
 ```
 
 This will build DeimOS for Raspberry Pi 4B.
