@@ -78,7 +78,7 @@ CONFIG_SPLASH_SCREEN_ALIGN=y
 
 # override the ugly and useless bootflow scan
 CONFIG_USE_BOOTCOMMAND=y
-CONFIG_BOOTCOMMAND="fatload mmc 0:1 ${loadaddr} boot.scr.uimg ; source ${loadaddr}"
+CONFIG_BOOTCOMMAND="fatload mmc 1:1 ${loadaddr} boot.scr.uimg ; source ${loadaddr}"
 
 CONFIG_BOOTCOUNT_BOOTLIMIT=3
 CONFIG_CMD_BOOTCOUNT=y
