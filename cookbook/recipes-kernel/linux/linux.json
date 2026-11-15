@@ -9,6 +9,16 @@
     "ref": {
         "linux/arm64": "a71c93af39478416320f35c8db24855cf404c580"
     },
+    "customData": {
+        "ref": {
+            "stable": {
+                "linux/arm64": "a71c93af39478416320f35c8db24855cf404c580"
+            },
+            "edge": {
+                "linux/arm64": "bc657b67a59b27665d1ebe3aa6d0e05cf5a4d70c"
+            }
+        }
+    },
     "afterDeployRecipes": [
         "dtb.ts"
     ],
