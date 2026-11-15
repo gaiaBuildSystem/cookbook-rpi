@@ -62,7 +62,7 @@
                     "feedUri": "http://deb.debian.org/debian",
                     "suites": "forky-backports",
                     "components": "main",
-                    "gpgKeyUrl": "https://ftp-master.debian.org/keys/archive-key-12.asc",
+                    "gpgKeyUrl": "https://ftp-master.debian.org/keys/archive-key-13.asc",
                     "pin": "release n=forky-backports",
                     "pinPriority": 700
                 },
