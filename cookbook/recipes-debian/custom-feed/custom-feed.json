@@ -72,7 +72,7 @@
                     "feedUri": "http://archive.raspberrypi.com/debian",
                     "suites": "forky",
                     "components": "main",
-                    "gpgKeyUrl": "https://archive.raspberrypi.com/debian/raspberrypi.gpg.key",
+                    "gpgKeyUrl": "https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage0/00-configure-apt/files/raspberrypi-archive-keyring.pgp",
                     "pin": "origin archive.raspberrypi.com",
                     "pinPriority": 900
                 }
